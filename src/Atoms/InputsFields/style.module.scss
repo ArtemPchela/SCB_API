@@ -1,0 +1,37 @@
+.inputs {
+  //display: flex;
+  .inputs_wrapper {
+
+    &_title {
+      font-size: 24px;
+      font-weight: 900;
+      color: black;
+    }
+
+    .inputs_form {
+      list-style-type: none;
+
+      &_list {
+        width: 100%;
+        min-width: 140px;
+        min-height: 90px;
+        font-size: 1.6rem;
+        padding: 3px;
+        &_point {
+
+        }
+      }
+    }
+
+    .input_search {
+      &_input {
+
+      }
+    }
+  }
+
+  .select {
+    width: 450px;
+  }
+}
+

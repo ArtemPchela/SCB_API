@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Header from "./Molecules/Header";
+import About from "./Organisms/About";
+import Intro from "./Organisms/Intro";
+import Contacts from "./Organisms/Contacts";
+import SearchAPI from "./Organisms/Search API";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    return (
+        <Fragment>
+            <Header/>
+            <Switch>
+                <Route exact path="/" component={Intro}/>
+                <Route path="/search" component={SearchAPI}/>
+                <Route path="/contacts" component={Contacts}/>
+                <Route path="/about" component={About}/>
+            </Switch>
+        </Fragment>
+    );
 }
 
-export default App;
+
