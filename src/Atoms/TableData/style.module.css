@@ -1,0 +1,13 @@
+.modal_styles {
+  min-width: 80%;
+  min-height: 50%;
+  background: cadetblue;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*# sourceMappingURL=style.module.css.map */

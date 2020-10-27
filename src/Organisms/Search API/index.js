@@ -2,10 +2,19 @@ import React, { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import Api from "../../services/api";
 import InputsFields from "../../Atoms/InputsFields";
+import ModalData from "../../Atoms/TableData";
 
 export default function SearchAPI() {
 
     const [activeElements, setActiveElements] = useState([true]);
+    const [queryState, setQueryState] = useState({});
+    const [queryData, setQueryData] = useState({data: null, loading: false, modalOpen: false});
+    const [categoryData, setCategoryData] = useState([null]);
+    const [level, setLevel] = useState([""]);
+
+    const closeHandler = () => {
+       setQueryData(!queryData);
+    }
 
     const onMouseEnter = (index) => {
         const elements = [...activeElements]
@@ -16,17 +25,10 @@ export default function SearchAPI() {
         setActiveElements(elementsWidthHiddenInner)
     }
 
-    // const handleSubmit = e => {
-    //     e.preventDefault();
-    //     alert(`Select data: ${}`);
-    // };
-
     const onMouseLeave = (index, e) => {
         if (!e.target || !e.relatedTarget || !e.currentTarget) {
             return false
         }
-        // console.log(e.currentTarget)
-        // console.log(e.target, e.relatedTarget, e.target.contains(e.relatedTarget), e.relatedTarget.contains(e.relatedTarget))
         if (e.target.contains(e.relatedTarget) || e.target === e.relatedTarget || e.currentTarget.contains(e.relatedTarget)) {
             return false
         }
@@ -39,8 +41,80 @@ export default function SearchAPI() {
     }
 
 
-    const [categoryData, setCategoryData] = useState([null]);
-    const [level, setLevel] = useState([""]);
+    const handleInputChange = (data, code) => {
+        const newQueryState = {...queryState, [code]: data}
+        setQueryState(newQueryState);
+    }
+
+    const concatPath = () => {
+        const resultOne = level.filter(element => typeof element === "string");
+        const resultTwo = resultOne.map((element) => '/' + element);
+        const resultThree = resultTwo.join("");
+        return resultThree;
+    }
+
+    const getQueryData = (method, queryString) => {
+        const url = concatPath();
+        setQueryData({...queryData, loading: true})
+        Api.getCategoryInformation(url, method, queryString).then(result => {
+            setQueryData({data: result.data, modalOpen: true, loading: false});
+
+        }).catch(error => {
+            setQueryData({...queryData, loading: false})
+            alert(error.message)
+        });
+    }
+
+    const handleSubmit = () => {
+        //from object to massive
+        const queryKeys = Object.keys(queryState);
+        const queryArray = queryKeys.map((key) => {
+            const queryStateValue = queryState[key];
+            return {code: key, selection: {filter: "item", values: queryStateValue.map((el) => el.value)}}
+        })
+        const queryString = {query: queryArray, response: {format: "json"}}
+        const jsonQueryString = JSON.stringify(queryString);
+        getQueryData("post", jsonQueryString);
+    }
+
+    const queryMock = {
+        "query": [
+            {
+                "code": "SNI2007",
+                "selection": {
+                    "filter": "item",
+                    "values": [
+                        "B-S exkl.O"
+                    ]
+                }
+            },
+            {
+                "code": "ContentsCode",
+                "selection": {
+                    "filter": "item",
+                    "values": [
+                        "AM0301AA"
+                    ]
+                }
+            },
+            {
+                "code": "Tid",
+                "selection": {
+                    "filter": "item",
+                    "values": [
+                        "2020M07"
+                    ]
+                }
+            }
+        ],
+        "response": {
+            "format": "json"
+        }
+    }
+
+
+    console.log(queryState, "STATE NEW!!!!!!")
+
 
     const concatId = (id, index) => {
         const levelsArrayNewProps = [...level];
@@ -113,27 +187,32 @@ export default function SearchAPI() {
                                onMouseOut={(e) => onMouseLeave(index, e)}
                                onMouseEnter={() => onMouseEnter(index)}
                         >
-                            <div style={{fontSize: "20px", fontWeight: 600, alignItems: "center"}}>
+                            <div className={`${styles.search_title}`}>
                                 {element.title}
                             </div>
-                            <div>
+                            <div className="d-flex flex-column align-items-center">
                                 <ul>
                                     {element.variables && element.variables.map((element, index) => {
                                         return (
-                                            <div  key={index}>
-                                                <InputsFields element={element}/>
+                                            <div key={index}>
+                                                <InputsFields element={element}
+                                                              handleInputChange={handleInputChange}
+
+                                                />
                                             </div>
                                         )
                                     })}
                                 </ul>
                                 {/*------------submit button----------------------*/}
-                                <button className={`${styles.inputs_searchButton}`}
-                                    // onClick={handleSubmit}
+                                <button className={`${styles.searchButton}`}
+                                        onClick={handleSubmit}
                                 >
                                     Get Data
                                 </button>
                                 {/*------------submit button----------------------*/}
                             </div>
+
+
                         </div>
 
                         : (<div key={index}
@@ -153,13 +232,13 @@ export default function SearchAPI() {
                                         return (
                                             element.type === "l" ?
                                                 <li onClick={() => getData(element.id, index + 1)} key={element.id}
-                                                    className={`${styles.search_secondHeader_one}`}
+                                                    className={`${styles.search_secondHeader_one} ${styles.search_header_title}`}
                                                 >
                                                     {element.text}
                                                 </li>
                                                 : element.type === "t" ?
                                                 <li onClick={() => getData(element.id, index + 1, "get")} key={element.text}
-                                                    className={`${styles.search_secondHeader_two}`}
+                                                    className={`${styles.search_secondHeader_two} ${styles.search_header_title}`}
                                                 >
                                                     {element.text}
 
@@ -171,6 +250,12 @@ export default function SearchAPI() {
                         </div>)
                 )}
             </div>
+            {queryData.data && <div className={`${styles.modal}`}>
+                <ModalData data={queryData.data}
+                           closeHandler={closeHandler}
+                />
+            </div>
+            }
         </div>
     )
 }

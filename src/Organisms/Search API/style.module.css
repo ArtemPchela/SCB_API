@@ -21,28 +21,17 @@
   left: 0;
   transition: 0.5s;
 }
-.search_header:before {
-  position: absolute;
-  content: "Step 1";
-  width: 120px;
-  height: 60px;
-  border: 20px solid transparent;
-  background: cadetblue;
-  border-radius: 0 7px 7px 0;
-  top: 50px;
-  left: 100%;
-  right: -118px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 24px;
-}
 .search_header_title {
   font-size: 20px;
   font-weight: 700;
   padding: 5px 0;
-  border-bottom: 2px solid #5756B1;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.search_header_title:hover {
+  color: #27c7cb;
+  transition: 0.3s;
 }
 .search_header_loading {
   font-size: 35px;
@@ -64,49 +53,12 @@
   background: black;
   z-index: 100;
 }
-.search p ul li {
-  display: block;
-  cursor: pointer;
-}
-.search p ul li:hover {
-  cursor: pointer;
-  background: chocolate;
-}
 .search_secondHeader {
   transition: 2s;
   font-size: 20px;
   font-weight: 700;
   padding: 5px 0;
   border-bottom: 2px solid #5756B1;
-}
-.search_secondHeader_one {
-  border-bottom: 2px solid #5756B1;
-}
-.search_secondHeader_two {
-  border-bottom: 2px solid #5756B1;
-}
-.search .inputs {
-  display: flex;
-}
-.search .inputs .inputs_wrapper {
-  background: cadetblue;
-  border: 1px solid #1F2126;
-  min-width: 250px;
-  min-height: 250px;
-  margin: 15px 15px;
-  border-radius: 10px;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.search .inputs .inputs_wrapper .inputs_title {
-  font-size: 24px;
-  font-weight: 900;
-  color: black;
-}
-.search .inputs .inputs_wrapper .inputs_form {
-  list-style-type: none;
 }
 .search .fixed {
   position: fixed;
@@ -124,8 +76,38 @@
   }
 }
 .search .searchButton {
-  background: #1e00be;
+  background: #ffffff;
+  width: 120px;
   padding: 12px 17px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.3s;
+  border: 1px solid #27c7cb;
+}
+.search .searchButton:hover {
+  color: #ffffff;
+  background: #27c7cb;
+  transition: 0.3s;
+  border: 1px solid black;
+}
+.search .search_title {
+  font-weight: 900;
+  font-size: 24px;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 5px 0;
+}
+
+.modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  top: 0;
+  left: 0;
 }
 
 /*# sourceMappingURL=style.module.css.map */

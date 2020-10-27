@@ -23,29 +23,18 @@
       transition: 0.5s;
     }
 
-    &:before {
-      position: absolute;
-      content: "Step 1";
-      width: 120px;
-      height: 60px;
-      border: 20px solid transparent;
-      background: cadetblue;
-      border-radius: 0 7px 7px 0;
-      top: 50px;
-      left: 100%;
-      right: -118px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 24px;
-    }
-
     &_title {
       font-size: 20px;
       font-weight: 700;
       padding: 5px 0;
-      border-bottom: 2px solid #5756B1;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        color: #27c7cb;
+        transition: 0.3s;
+      }
     }
 
     &_loading {
@@ -71,28 +60,6 @@
     }
   }
 
-  p {
-    ul {
-      li {
-        display: block;
-        cursor: pointer;
-      }
-
-      li:hover {
-        cursor: pointer;
-        background: chocolate;
-      }
-    }
-  }
-
-  &_last {
-
-  }
-
-  &_noLast {
-
-  }
-
   &_secondHeader {
     transition: 2s;
     font-size: 20px;
@@ -101,51 +68,9 @@
     border-bottom: 2px solid #5756B1;
 
     &_one {
-      border-bottom: 2px solid #5756B1;
     }
 
     &_two {
-      border-bottom: 2px solid #5756B1;
-    }
-  }
-  //-------------------------------- inputs ---------------------------------------------------
-  .inputs {
-    display: flex;
-
-    .inputs_wrapper {
-      background: cadetblue;
-      border: 1px solid #1F2126;
-      min-width: 250px;
-      min-height: 250px;
-      margin: 15px 15px;
-      border-radius: 10px;
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .inputs_title {
-        font-size: 24px;
-        font-weight: 900;
-        color: black;
-      }
-
-      .inputs_form {
-        list-style-type: none;
-
-        &_list {
-
-          &_point {
-
-          }
-        }
-      }
-
-      .input_search {
-        &_input {
-
-        }
-      }
     }
   }
 
@@ -162,8 +87,41 @@
       height: calc(100% - 80px);
     }
   }
+
   .searchButton {
-    background: #1e00be;
+    background: #ffffff;
+    width: 120px;
     padding: 12px 17px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.3s;
+    border: 1px solid #27c7cb;
+    &:hover {
+      color: #ffffff;
+      background: #27c7cb;
+      transition: 0.3s;
+      border: 1px solid black;
+    }
   }
+
+  .search_title {
+    font-weight: 900;
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 5px 0;
+  }
+}
+
+
+.modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  top: 0;
+  left: 0;
 }
