@@ -15,14 +15,14 @@ export default function Header() {
     }, [])
 
     const checkScroll = () => {
-        window.pageYOffset > 100 ? setScroll(true) : setScroll(false)
+        window.pageYOffset > 100 ? setScroll(true) : setScroll(false);
     }
 
     return (
         <header className={`${styles.header} ${scroll ? styles.header_visible : ''}`}>
 
             {/*-----Nav Links Mobile-----*/}
-            <NavMobile linksNav={links} />
+            <NavMobile linksNav={links}/>
             {/*-----Nav Links Mobile-----*/}
 
             <div className={`${styles.header_nav}`}>
@@ -44,7 +44,7 @@ export default function Header() {
                 >
                     <h3>
                         <span className={`${styles.header_logo_style_first}`}>S</span>
-                        <span className={`${styles.header_logo_style_seconr}`}>C</span>
+                        <span className={`${styles.header_logo_style_second}`}>C</span>
                         <span className={`${styles.header_logo_style_third}`}>B</span>
                     </h3>
                 </Link>

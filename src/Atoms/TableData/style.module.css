@@ -1,6 +1,7 @@
 .modal_styles {
   min-width: 80%;
   min-height: 50%;
+  background: #212020;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -15,9 +16,11 @@
   padding: 12px 17px;
   align-items: center;
   justify-content: center;
+  font-family: "Ink Free", sans-serif;
   cursor: pointer;
   font-weight: 700;
-  transition: 0.3s;
+  letter-spacing: 0.1em;
+  transition: 0.5s;
   border: 1px solid #27c7cb;
   position: absolute;
   top: 75%;
@@ -27,7 +30,7 @@
 .modal_styles .modal_button:hover {
   color: #ffffff;
   background: #27c7cb;
-  transition: 0.3s;
+  transition: 0.5s;
   border: 1px solid black;
 }
 

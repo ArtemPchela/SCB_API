@@ -7,16 +7,18 @@
 
   &_mobile {
     padding-bottom: 36px;
-    font-family: Moret, serif;
+    font-family: "Ink Free", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 35px;
     line-height: 105%;
     letter-spacing: -0.01em;
     color: #FFFFFF;
+    transition: 0.7s;
 
     &:hover {
-      color: #F4AC83;
+      color: #27c7cb;
+      transition: 0.7s;
     }
   }
 }
@@ -48,7 +50,7 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      background: #5756B1;
+      background: #181515;
       overflow: auto;
 
       .mobile_close_icon_wrapper {
@@ -59,6 +61,10 @@
         top: 0;
         left: 17px;
         align-items: center;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
 
@@ -120,6 +126,10 @@
       width: 10%;
       height: 100%;
       align-items: center;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     .open {

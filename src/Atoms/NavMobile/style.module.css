@@ -6,16 +6,18 @@
 }
 .nav_item_mobile {
   padding-bottom: 36px;
-  font-family: Moret, serif;
+  font-family: "Ink Free", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 35px;
   line-height: 105%;
   letter-spacing: -0.01em;
   color: #FFFFFF;
+  transition: 0.7s;
 }
 .nav_item_mobile:hover {
-  color: #F4AC83;
+  color: #27c7cb;
+  transition: 0.7s;
 }
 
 .mobile_nav {
@@ -46,7 +48,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background: #5756B1;
+    background: #181515;
     overflow: auto;
   }
   .mobile_nav .mobile_menu .mobile_close_icon_wrapper {
@@ -57,6 +59,9 @@
     top: 0;
     left: 17px;
     align-items: center;
+  }
+  .mobile_nav .mobile_menu .mobile_close_icon_wrapper:hover {
+    cursor: pointer;
   }
   .mobile_nav .mobile_nav_link:hover {
     text-decoration: none;
@@ -109,6 +114,9 @@
     width: 10%;
     height: 100%;
     align-items: center;
+  }
+  .mobile_nav .mobile_menu_icon_open:hover {
+    cursor: pointer;
   }
   .mobile_nav .open {
     opacity: 1;

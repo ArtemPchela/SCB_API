@@ -1,6 +1,7 @@
 .intro {
   display: flex;
   align-items: center;
+  font-family: "Ink Free", sans-serif;
 
   &_first {
     padding: 25px 0;
@@ -26,6 +27,7 @@
     &_link {
       display: flex;
       align-items: center;
+      font-weight: 900;
 
       a {
         padding-top: 25px;
@@ -35,7 +37,7 @@
 
   &_second {
     padding: 25px 0;
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid #27c7cb;
 
     &_statistics {
       text-align: center;
@@ -44,15 +46,23 @@
         font-size: 1.8rem;
         border-radius: 3rem;
         padding: 14px 28px;
-        border: 1px solid transparent;
         margin-bottom: 10px;
         margin-right: 10px;
         text-decoration: none;
         cursor: pointer;
-        font-weight: 500;
+        font-family: "Ink Free", sans-serif;
+        font-weight: 900;
         display: inline-block;
-        color: #fff;
-        background: #1e00be;
+        color: black;
+        background: #ffffff;
+        border: 1px solid #27c7cb;
+        transition: 0.5s;
+        &:hover {
+          color: #ffffff;
+          background: #27c7cb;
+          border: 1px solid black;
+          transition: 0.5s;
+        }
       }
     }
   }
@@ -60,11 +70,14 @@
   &_third {
     display: flex;
     padding: 25px;
-    padding: 60px 4%;
     width: 100%;
     &_title {
       align-items: center;
       justify-content: center;
+      margin: 0 auto;
+      h3 {
+        font-weight: 900;
+      }
     }
     &_lists {
       display: flex;
@@ -73,7 +86,7 @@
 
       &_list {
         width: 100%;
-        border-top: 1px solid #949494;
+        border-top: 1px solid #27c7cb;
         padding: 18px 0;
         margin-bottom: 0;
         @media screen and (min-width: 760px) {
@@ -89,16 +102,18 @@
           align-items: center;
           justify-content: center;
           flex-direction: column;
+          font-weight: 900;
           &_number {
             font-size: 48px;
             line-height: 100%;
             text-align: center;
-            font-weight: 500;
             letter-spacing: -.12rem;
+            font-weight: 900;
           }
           &_month {
             font-size: 14px;
             line-height: 20px;
+            font-weight: 900;
           }
         }
       }
@@ -111,16 +126,16 @@
       display: inline-block;
       margin-bottom: 3px;
       font-style: normal;
-      font-weight: 500!important;
       font-size: 16px;
       line-height: 24px;
-      padding-top: 3px
+      padding-top: 3px;
+      font-weight: 900;
     }
     &_text {
       padding-top: 0;
       margin-bottom: 0;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 900;
       font-size: 14px;
       line-height: 20px;
       color: #222;
