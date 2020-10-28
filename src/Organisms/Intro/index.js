@@ -20,7 +20,7 @@ export default function Intro() {
                     </div>
                     <div
                         className={`col-12 col-md-4 col-sm-6 col-xl-1 d-flex align-items-end order-3 ${styles.intro_first_link}`}>
-                        <a href="">
+                        <a href="/home">
                                 <span>
                                     Organic cereal production in tonnes
                                 </span>

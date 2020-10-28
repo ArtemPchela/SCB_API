@@ -84,8 +84,11 @@
         }
         &_date {
           width: 55px;
-          float: left;
           white-space: nowrap;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
           &_number {
             font-size: 48px;
             line-height: 100%;

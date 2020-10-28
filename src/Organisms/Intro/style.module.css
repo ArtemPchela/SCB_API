@@ -79,8 +79,11 @@
 }
 .intro_third_lists_list_date {
   width: 55px;
-  float: left;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .intro_third_lists_list_date_number {
   font-size: 48px;

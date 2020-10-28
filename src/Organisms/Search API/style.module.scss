@@ -1,12 +1,14 @@
 .search {
   position: relative;
+  background: #202022;
 
   &_first {
     width: 90%;
     height: 80%;
     margin: 25px auto;
-    border: 2px solid #1F2126;
+    border: 2px solid rgba(0, 0, 0, 0.3);
     border-radius: 7px;
+    background: #FFFFFF;
   }
 
   &_header {
@@ -66,23 +68,18 @@
     font-weight: 700;
     padding: 5px 0;
     border-bottom: 2px solid #5756B1;
-
-    &_one {
-    }
-
-    &_two {
-    }
   }
 
   .fixed {
     position: fixed;
     left: 100px;
     height: calc(100% - 60px);
-    border: 2px solid #1F2126;
     border-radius: 7px;
     background: rgba(256, 256, 256, 0.9);
     transition: 1s;
     overflow: scroll;
+    margin-top: 25px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
     @media screen and (min-width: 991px) {
       height: calc(100% - 80px);
     }

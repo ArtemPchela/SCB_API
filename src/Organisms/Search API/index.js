@@ -253,6 +253,7 @@ export default function SearchAPI() {
             {queryData.data && <div className={`${styles.modal}`}>
                 <ModalData data={queryData.data}
                            closeHandler={closeHandler}
+                           queryMock={queryMock}
                 />
             </div>
             }
