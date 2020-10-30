@@ -1,3 +1,10 @@
-
+.about {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.about_wrapper {
+  flex: 1;
+}
 
 /*# sourceMappingURL=style.module.css.map */

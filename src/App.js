@@ -5,6 +5,7 @@ import About from "./Organisms/About";
 import Intro from "./Organisms/Intro";
 import Contacts from "./Organisms/Contacts";
 import SearchAPI from "./Organisms/Search API";
+import Footer from './Molecules/Footer';
 
 export default function App() {
     return (
@@ -16,6 +17,7 @@ export default function App() {
                 <Route path="/contacts" component={Contacts}/>
                 <Route path="/about" component={About}/>
             </Switch>
+            <Footer/>
         </Fragment>
     );
 }

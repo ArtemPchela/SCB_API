@@ -1,4 +1,9 @@
 .about {
-
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  &_wrapper {
+    flex: 1;
+  }
 }
 

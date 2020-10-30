@@ -1,3 +1,35 @@
-
+.contacts_wrapper {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contacts_wrapper .block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 0;
+}
+.contacts_wrapper .block_data {
+  display: flex;
+  flex-direction: column;
+  color: #FFFFFF;
+  align-items: center;
+  justify-content: center;
+}
+.contacts_wrapper .block_data img {
+  width: 75px;
+}
+.contacts_wrapper .block_data a {
+  font-weight: 900;
+  font-size: 24px;
+  color: #FFFFFF;
+  transition: 0.5s;
+}
+.contacts_wrapper .block_data a:hover {
+  color: #27c7cb;
+  transition: 0.5s;
+}
 
 /*# sourceMappingURL=style.module.css.map */

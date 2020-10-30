@@ -5,7 +5,7 @@
 }
 .intro_first {
   padding: 25px 0;
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid #27c7cb;
 }
 .intro_first_title {
   display: flex;
@@ -13,10 +13,12 @@
 }
 .intro_first_title h1 {
   font-weight: 900;
+  color: #FFFFFF;
 }
 .intro_first_shema img {
   width: 100%;
   height: 100%;
+  color: rgba(112, 240, 43, 0.81);
 }
 .intro_first_link {
   display: flex;
@@ -25,6 +27,12 @@
 }
 .intro_first_link a {
   padding-top: 25px;
+  color: #FFFFFF;
+  transition: 0.5s;
+}
+.intro_first_link a:hover {
+  color: #27c7cb;
+  transition: 0.5s;
 }
 .intro_second {
   padding: 25px 0;
@@ -123,15 +131,21 @@
   line-height: 24px;
   padding-top: 3px;
   font-weight: 900;
+  color: #FFFFFF;
+  transition: 0.5s;
+}
+.intro .description_link:hover {
+  color: #27c7cb;
+  transition: 0.5s;
 }
 .intro .description_text {
   padding-top: 0;
   margin-bottom: 0;
   font-style: normal;
-  font-weight: 900;
   font-size: 14px;
   line-height: 20px;
-  color: #222;
+  color: #FFFFFF;
+  letter-spacing: 0.5px;
 }
 
 .intro_container {

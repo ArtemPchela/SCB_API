@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import Api from "../../services/api";
 import InputsFields from "../../Atoms/InputsFields";
-import ModalData from "../../Atoms/TableData";
+import ModalData from "../../Atoms/ModalData";
 
 export default function SearchAPI() {
 
@@ -15,6 +15,10 @@ export default function SearchAPI() {
     const closeHandler = () => {
        setQueryData(!queryData);
     }
+
+    // useEffect(() => {
+    //     setQueryData(queryData)
+    // }, [])
 
     const onMouseEnter = (index) => {
         const elements = [...activeElements]
@@ -111,10 +115,6 @@ export default function SearchAPI() {
             "format": "json"
         }
     }
-
-
-    console.log(queryState, "STATE NEW!!!!!!")
-
 
     const concatId = (id, index) => {
         const levelsArrayNewProps = [...level];

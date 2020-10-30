@@ -15,7 +15,7 @@ class ApiService {
             method,
             url: "/doris/sv/ssd/START/" + (id || ""),
             data: body ? body : null
-        }) : await this.sender.post("/doris/sv/ssd/START/" + (id || ""));
+        }) : await this.sender.post("/doris/sv/ssd/START" + (id || ""));
         return result;
     }
 }
