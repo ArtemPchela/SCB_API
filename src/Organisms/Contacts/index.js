@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./style.module.scss";
 import call from './images/callMe.gif';
-import mail from './images/mail.gif';
+import email from './images/email.png';
 import chat from './images/chat.gif';
 
 export default function Contacts() {
@@ -24,7 +24,7 @@ export default function Contacts() {
                     <div className="col-12">
                         <div className={`${styles.block}`}>
                             <div className={`${styles.block_data}`}>
-                                <img src={mail} alt="gif call me" style={{width: "100px", height: "150px"}}/>
+                                <img src={email} alt="gif call me" style={{width: "75px"}}/>
                                 <a href="mailto:pchelenkovartem@gmail.com">pchelenkovartem@gmail.com</a>
                             </div>
                         </div>

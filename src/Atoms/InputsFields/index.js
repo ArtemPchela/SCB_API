@@ -23,9 +23,6 @@ export default function InputsFields({element, handleInputChange}) {
                 <div className={`${styles.inputs_wrapper_title}`}>
                     {element.text}
                 </div>
-                <div className={`${styles.inputs_wrapper_form}`}>
-
-                </div>
                 <Select
                     isMulti
                     name="newOptions"

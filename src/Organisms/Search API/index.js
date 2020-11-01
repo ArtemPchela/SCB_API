@@ -12,8 +12,10 @@ export default function SearchAPI() {
     const [categoryData, setCategoryData] = useState([null]);
     const [level, setLevel] = useState([""]);
 
+
     const closeHandler = () => {
-       setQueryData(!queryData);
+        const newQueryData = {...queryData, modalOpen: false}
+       setQueryData(newQueryData);
     }
 
     // useEffect(() => {
@@ -190,13 +192,14 @@ export default function SearchAPI() {
                             <div className={`${styles.search_title}`}>
                                 {element.title}
                             </div>
-                            <div className="d-flex flex-column align-items-center">
+                            <div className="d-flex flex-column align-items-center ">
                                 <ul>
                                     {element.variables && element.variables.map((element, index) => {
                                         return (
                                             <div key={index}>
                                                 <InputsFields element={element}
                                                               handleInputChange={handleInputChange}
+
 
                                                 />
                                             </div>
@@ -250,10 +253,10 @@ export default function SearchAPI() {
                         </div>)
                 )}
             </div>
-            {queryData.data && <div className={`${styles.modal}`}>
+            {queryData.modalOpen && queryData.data && <div className={`${styles.modal}`}>
                 <ModalData data={queryData.data}
                            closeHandler={closeHandler}
-                           queryMock={queryMock}
+                           queryState={queryState}
                 />
             </div>
             }
