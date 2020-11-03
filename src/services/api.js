@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = "http://api.scb.se/OV0104/v1";
+const BASE_URL = "https://api.scb.se/OV0104/v1";
 
 class ApiService {
     constructor(url) {
