@@ -12,7 +12,7 @@ class ApiService {
     getCategoryInformation = async (id, method, body) => {
         const result = method ? await this.sender({
             method,
-            url: "/doris/sv/ssd/START/" + (id || ""),
+            url: "/doris/sv/ssd/START" + (id || ""),
             data: body ? body : null
         }) : await this.sender.post("/doris/sv/ssd/START" + (id || ""));
         return result;
