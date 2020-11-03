@@ -18,10 +18,6 @@ export default function SearchAPI() {
        setQueryData(newQueryData);
     }
 
-    // useEffect(() => {
-    //     setQueryData(queryData)
-    // }, [])
-
     const onMouseEnter = (index) => {
         const elements = [...activeElements]
         elements[index] = true
@@ -81,41 +77,6 @@ export default function SearchAPI() {
         const queryString = {query: queryArray, response: {format: "json"}}
         const jsonQueryString = JSON.stringify(queryString);
         getQueryData("post", jsonQueryString);
-    }
-
-    const queryMock = {
-        "query": [
-            {
-                "code": "SNI2007",
-                "selection": {
-                    "filter": "item",
-                    "values": [
-                        "B-S exkl.O"
-                    ]
-                }
-            },
-            {
-                "code": "ContentsCode",
-                "selection": {
-                    "filter": "item",
-                    "values": [
-                        "AM0301AA"
-                    ]
-                }
-            },
-            {
-                "code": "Tid",
-                "selection": {
-                    "filter": "item",
-                    "values": [
-                        "2020M07"
-                    ]
-                }
-            }
-        ],
-        "response": {
-            "format": "json"
-        }
     }
 
     const concatId = (id, index) => {
@@ -206,6 +167,7 @@ export default function SearchAPI() {
                                         )
                                     })}
                                 </ul>
+
                                 {/*------------submit button----------------------*/}
                                 <button className={`${styles.searchButton}`}
                                         onClick={handleSubmit}
@@ -214,8 +176,6 @@ export default function SearchAPI() {
                                 </button>
                                 {/*------------submit button----------------------*/}
                             </div>
-
-
                         </div>
 
                         : (<div key={index}
@@ -257,6 +217,7 @@ export default function SearchAPI() {
                 <ModalData data={queryData.data}
                            closeHandler={closeHandler}
                            queryState={queryState}
+                           categoryData={categoryData[categoryData.length - 1]}
                 />
             </div>
             }
