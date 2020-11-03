@@ -2,7 +2,6 @@ import axios from 'axios';
 
 const BASE_URL = "http://api.scb.se/OV0104/v1";
 
-
 class ApiService {
     constructor(url) {
         this.sender = axios.create({
@@ -10,7 +9,7 @@ class ApiService {
         })
     }
 
-    getCategoryInformation = async(id, method, body) => {
+    getCategoryInformation = async (id, method, body) => {
         const result = method ? await this.sender({
             method,
             url: "/doris/sv/ssd/START/" + (id || ""),

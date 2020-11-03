@@ -1,4 +1,6 @@
 .contacts {
+  font-family: "Ink Free", sans-serif;
+  color: #FFFFFF;
 
   &_wrapper {
     min-height: 80vh;
@@ -6,6 +8,14 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    .contacts_title {
+      h3 {
+        font-size: 30px;
+        font-weight: bolder;
+        border-bottom: 1px solid #27c7cb;
+      }
+    }
 
     .block {
       display: flex;
@@ -22,6 +32,7 @@
 
         img {
           width: 75px;
+          margin-bottom: 7px;
         }
 
         a {

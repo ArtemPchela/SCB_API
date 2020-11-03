@@ -15,7 +15,7 @@ export default function SearchAPI() {
 
     const closeHandler = () => {
         const newQueryData = {...queryData, modalOpen: false}
-       setQueryData(newQueryData);
+        setQueryData(newQueryData);
     }
 
     const onMouseEnter = (index) => {

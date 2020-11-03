@@ -1,13 +1,16 @@
 .languages {
   position: relative;
   font-size: 11px;
-   &:hover {
-     cursor: pointer;
-     color: #27c7cb;
-   }
+
+  &:hover {
+    cursor: pointer;
+    color: #27c7cb;
+  }
+
   &_navMobile {
     margin-left: 30px;
   }
+
   @media (max-width: 991px) {
     display: block;
   }

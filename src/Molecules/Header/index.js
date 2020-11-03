@@ -43,9 +43,9 @@ export default function Header() {
                       to={"/"}
                 >
                     <h3>
-                        <span className={`${styles.header_logo_style_first}`}>S</span>
-                        <span className={`${styles.header_logo_style_second}`}>C</span>
-                        <span className={`${styles.header_logo_style_third}`}>B</span>
+                        <span className={`${styles.header_logo_style_first}`}>A</span>
+                        <span className={`${styles.header_logo_style_second}`}>P</span>
+                        <span className={`${styles.header_logo_style_third}`}>I</span>
                     </h3>
                 </Link>
             </div>

@@ -4,8 +4,6 @@ import odling from "./images/odling.png";
 import { NavLink } from "react-router-dom";
 import statisticsList from '../Intro/statisticsList.json';
 import linksList from './lists.json';
-// import InputsFields from "../../Atoms/InputsFields";
-/*<InputsFields />*/
 
 export default function Intro() {
     return (
@@ -48,13 +46,15 @@ export default function Intro() {
                     </div>
                     <ul className={`${styles.intro_third_lists}`}>
                         {linksList.map((element, id) =>
-                            <li className={`d-flex col-12 col-lg-6 align-items-center ${styles.intro_third_lists_list}`} key={id}>
+                            <li className={`d-flex col-12 col-lg-6 align-items-center ${styles.intro_third_lists_list}`}
+                                key={id}>
                                 <div className={`${styles.intro_third_lists_list_date}`}>
                                     <div className={`${styles.intro_third_lists_list_date_number}`}>{element.date}</div>
                                     <div className={`${styles.intro_third_lists_list_date_month}`}>{element.month}</div>
                                 </div>
                                 <div className={`${styles.description}`}>
-                                    <a className={`${styles.description_link}`} href={element.href}><span>{element.title}</span></a>
+                                    <a className={`${styles.description_link}`}
+                                       href={element.href}><span>{element.title}</span></a>
                                     <p className={`${styles.description_text}`}>{element.description}</p>
                                 </div>
                             </li>

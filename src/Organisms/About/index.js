@@ -1,62 +1,29 @@
 import React from "react";
 import styles from "./style.module.scss";
 
-export default function About({header, body}) {
-    console.log(header, "HEADER");
-    console.log(body, "BODY");
+export default function About() {
     return (
         <div className={`${styles.about}`}>
             <div className={`${styles.about_wrapper}`}>
-                <div className={`${styles.table}`}>
-                    <div className={`${styles.table_wrapper}`}>
-                        <table className={`${styles.table_class}`}>
-                            <thead>
-                            <tr>
-                                <th className={`${styles.table_title}`} colSpan={0}>Take your data</th>
-                            </tr>
-                            <tr>
-                                <td className={`${styles.table_header_first}`} colSpan={1} rowSpan={2}> </td>
-                                <th className={`${styles.table_header_first}`} colSpan={2}>
-                                    Preliminärt, 2008M01=100
-                                </th>
-                                <th className={`${styles.table_header_first}`} colSpan={2}>
-                                    Definitivt, 2008M01=100
-                                </th>
-                            </tr>
-                            <tr>
-                                <th className={`${styles.table_header_last}`} colSpan={1}>2020M07</th>
-                                <th className={`${styles.table_header_last}`} colSpan={1}>2020M07</th>
-                                <th className={`${styles.table_header_last}`} colSpan={1}>2020M07</th>
-                                <th className={`${styles.table_header_last}`} colSpan={1}>2020M07</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <th className={`${styles.table_header_left}`}
-                                    rowSpan={1}
-                                >
-                                    B-S exkl.O samtliga näringsgrenar
-                                </th>
-                                <td className={`${styles.table_data_filled}`}>128,8</td>
-                                <td className={`${styles.table_data_filled}`}>127,4</td>
-                                <td className={`${styles.table_data_filled}`}>-</td>
-                                <td className={`${styles.table_data_filled}`}>-</td>
-                            </tr>
-                            <tr>
-                                <th className={`${styles.table_header_left}`}
-                                    rowSpan={1}
-                                >
-                                    B-E tillverknings- och utvinningsindustri; företag inom energi
-                                </th>
-                                <td className={`${styles.table_data_filled}`}>130.7</td>
-                                <td className={`${styles.table_data_filled}`}>131.5</td>
-                                <td className={`${styles.table_data_filled}`}>..</td>
-                                <td className={`${styles.table_data_filled}`}>..</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                <h3 className={`${styles.about_wrapper_title}`}>
+                    SCB Sweden Statistics database
+                </h3>
+                <p className={`${styles.about_wrapper_text}`}>An SCB site with a large resource can be used in
+                    absolutely any sphere of defensiveness.
+                    Good for novice businessmen and for those who have been in business for a long time.
+                    It is easy to work with data and regulate business processes based on data.
+                    Focus on the target audience by age and place of residence.
+                    Or to understand how much demand or supply has grown in a particular area.
+                </p>
+                <p className={`${styles.about_wrapper_text}`}>
+                    The site is also suitable for students,
+                    it may be able to help with choosing a place of residence or navigate which industry or sphere is
+                    the most productive.
+                    And in the future, choose a profession for your liking.
+                </p>
+                <p className={`${styles.about_wrapper_last}`}>
+                    Just be Happy!
+                </p>
             </div>
         </div>
     )

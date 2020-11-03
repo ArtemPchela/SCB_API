@@ -8,6 +8,9 @@ export default function Contacts() {
     return (
         <div className={`${styles.contacts}`}>
             <div className={`${styles.contacts_wrapper}`}>
+                <div className={`${styles.contacts_title}`}>
+                    <h3>If you have any questions you can contact me.</h3>
+                </div>
 
                 <div className="row no-gutters">
                     <div className="col-12">
